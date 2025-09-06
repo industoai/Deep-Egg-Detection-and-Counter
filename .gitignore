@@ -1,0 +1,26 @@
+# Pycharm files
+.idea/
+
+# poetry
+poetry.lock
+
+# Unit test files
+.coverage
+.coverage.*
+.cache
+.pytest_cache/
+src/egg_detection_counter/__pycache__/*.pyc
+tests/__pycache__/*
+
+# mypy files
+.mypy_cache/
+
+
+# Probable environments files
+.env
+.venv
+env/
+venv/
+
+# data files
+src/egg_detection_counter/data/*

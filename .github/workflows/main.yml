@@ -1,0 +1,46 @@
+name: Sync to Hugging Face hub
+on:
+  push:
+    branches:
+      - '**'
+
+  # to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  sync-to-hub:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          lfs: true
+
+      - name: Install Git LFS
+        run: |
+          git lfs install
+
+      - name: Configure Git user
+        run: |
+          git config --global user.name "industoai"
+          git config --global user.email "admin@industoai.com"
+
+      - name: Track .pt files with Git LFS
+        run: |
+          git lfs track "*.pt"
+          git lfs ls-files
+
+      - name: Add remote
+        env:
+          HF: ${{ secrets.HG }}
+        run: git remote add space https://industoai:$HF@huggingface.co/spaces/industoai/Deep-Egg-Detection-and-Counter
+
+      - name: Push to hub
+        env:
+          HF: ${{ secrets.HG }}
+        run: |
+          git lfs ls-files
+          git lfs push --all space
+          git push --force space ${{ github.ref }}:main
+
+

@@ -1,0 +1,7 @@
+*.pt filter=lfs diff=lfs merge=lfs -text
+results/sample2.jpg filter=lfs diff=lfs merge=lfs -text
+src/egg_detection_counter/model/egg_detector.pt filter=lfs diff=lfs merge=lfs -text
+tests/test_data/sample1.jpg filter=lfs diff=lfs merge=lfs -text
+tests/test_data/sample2.jpg filter=lfs diff=lfs merge=lfs -text
+tests/test_data/sample3.jpg filter=lfs diff=lfs merge=lfs -text
+tests/test_data/sample4.jpg filter=lfs diff=lfs merge=lfs -text
