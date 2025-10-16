@@ -13,7 +13,7 @@ short_description: Detect and count white and brown eggs from images
 # Deep-Egg-Detection-and-Counter
 This repository allows you to detect and count eggs in an egg-shell with the help of deep learning models specifically YOLOv8.
 A labeled dataset for training this model is collected manually.
-A YOLOv5 model is trained on this dataset and the trained model is provided and used to detect and count eggs in an egg-shell.
+A YOLO model is trained on this dataset and the trained model is provided and used to detect and count eggs in an egg-shell.
 
 ## Dataset
 A dataset from real application is collected and labeled manually in TOLO-format in order to be used for training and validation purposes.
